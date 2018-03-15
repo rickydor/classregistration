@@ -51,8 +51,8 @@ import static programmingassignmen1.Receivables.url;
    
       //info for connecting database
    static String url = "jdbc:mysql://localhost:3306/boolauniversity?useSSL=false";
-   static String user = "ricky";
-   static String password = "legendary,12";
+   static String user = "";
+   static String password = "";
    
    //tableview for putting all data like course number, course name, price and number of credits
    static TableView<CourseSelection> table = new TableView<CourseSelection>();
