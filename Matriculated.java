@@ -35,8 +35,8 @@ import javafx.stage.Stage;
     public class Matriculated {
     //mysql info to access to the database
     static String url = "jdbc:mysql://localhost:3306/boolauniversity?useSSL=false";
-    static String user = "ricky";
-    static String password = "legendary,12";
+    static String user = "";
+    static String password = "";
     
     //Creating textfield for students information
     private static TextField ssn = new TextField();
