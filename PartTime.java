@@ -36,8 +36,8 @@ import static programmingassignmen1.FullTime.table;
  */
 public class PartTime { 
    static String url = "jdbc:mysql://localhost:3306/boolauniversity?useSSL=false";
-   static String user = "ricky";
-   static String password = "legendary,12";
+   static String user = "";
+   static String password = "";
    
    private static TextField id = new TextField();      //textfield for students names
    private static TextField ssn = new TextField();  
