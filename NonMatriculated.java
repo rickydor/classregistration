@@ -32,8 +32,8 @@ import static programmingassignmen1.NonMatriculated.states;
 public class NonMatriculated {
     //info for accessing mysql database
     static String url = "jdbc:mysql://localhost:3306/boolauniversity?useSSL=false";
-    static String user = "ricky";
-    static String password = "legendary,12";
+    static String user = "";
+    static String password = "";
     
     //textfield for students information
     private static TextField ssn = new TextField();
