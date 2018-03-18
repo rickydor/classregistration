@@ -22,7 +22,7 @@ public class CourseSelection {
     private final SimpleStringProperty coursePrice;
     
  
-    CourseSelection (String number, String course, String credit, String price) {
+    CourseSelection (String number, String course, String credit, String price) {   //arguments for courseSelection class
         
         this.courseNumber = new SimpleStringProperty(number);    // constructor for course option
         this.courseName = new SimpleStringProperty(course);
