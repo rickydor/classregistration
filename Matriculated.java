@@ -57,7 +57,7 @@ import javafx.stage.Stage;
         
     public static void display() {
      
-    Stage window = new Stage();   
+    Stage window = new Stage();   //New window to display matriculated students info
     window.initModality(Modality.APPLICATION_MODAL);
     window.setTitle("Matriculated"); 
   
@@ -93,7 +93,7 @@ import javafx.stage.Stage;
             "Senior"
     );
     
-    Button submit = new Button("Submit");
+    Button submit = new Button("Submit");  //submit button after completing all the required fields.
     submit.setOnAction(e -> {
         try {
             gettingAdmission();
@@ -171,7 +171,7 @@ import javafx.stage.Stage;
       mystmt.setString(2, firstName.getText());
       mystmt.setString(3, middleName.getText()); 
       mystmt.setString(4, lastName.getText());
-      mystmt.setString(5, streetAddress.getText());
+      mystmt.setString(5, streetAddress.getText());    //Insert all the connected values in the database
       mystmt.setString(6, city.getText());
       mystmt.setString(7, states.getSelectionModel().getSelectedItem());
       mystmt.setString(8, zipCode.getText());
