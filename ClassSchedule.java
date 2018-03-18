@@ -29,15 +29,18 @@ import static programmingassignmen1.Receivables.table;
  * @author Ricardo
  */
 public class ClassSchedule {
+ //credentials of my mysql database.
  static String url = "jdbc:mysql://localhost:3306/boolauniversity?useSSL=false";
 static String user = "ricky";
 static String password = "legendary,12";
-     
+
+//TableView table and ObservableList data that displays the students schedule.
 static TableView<StudentsSchedule> table = new TableView<StudentsSchedule>();
 static ObservableList<StudentsSchedule> data = FXCollections.observableArrayList();
-  
+
+//A method that holds all the personal information of a student. 
 public static void display(){
-Stage window = new Stage();   
+Stage window = new Stage();   //A window with title schedule that shows students information
 window.initModality(Modality.APPLICATION_MODAL);
 window.setTitle("Schedule"); 
     
@@ -46,25 +49,25 @@ TableColumn ssNumber = new TableColumn("SS NUmber");   //table colunms for displ
     ssNumber.setCellValueFactory(
                 new PropertyValueFactory<StudentsSchedule, String>("ssNumber"));
  
-    TableColumn firstName = new TableColumn("First Name");
+    TableColumn firstName = new TableColumn("First Name");  //where student's first name will be stored
     firstName.setMinWidth(150);
     firstName.setCellValueFactory(
                 new PropertyValueFactory<StudentsSchedule, String>("firstName"));
  
-    TableColumn middleName = new TableColumn("M Name");
+    TableColumn middleName = new TableColumn("M Name");  //storing student middle name
     middleName.setMinWidth(80);
     middleName.setCellValueFactory(
                 new PropertyValueFactory<StudentsSchedule, String>("middleName"));
         
-    TableColumn lastName = new TableColumn("Last Name");
+    TableColumn lastName = new TableColumn("Last Name");     //storing student last name
     lastName.setMinWidth(150);
     lastName.setCellValueFactory(
-                new PropertyValueFactory<StudentsSchedule, String>("lastName"));
+                new PropertyValueFactory<StudentsSchedule, String>("lastName"));  //passing last name and observablelist studentschedule
     
-    TableColumn classe = new TableColumn("Class");
+    TableColumn classe = new TableColumn("Class");         //adding a TableColumn name classe and passed StdudentSchedule through it
     classe.setMinWidth(100);
     classe.setCellValueFactory(
-                new PropertyValueFactory<StudentsSchedule, String>("classes"));
+                new PropertyValueFactory<StudentsSchedule, String>("classes"));  
     
     TableColumn matriculate = new TableColumn("Matriculation");
     matriculate.setMinWidth(100);
@@ -92,15 +95,15 @@ TableColumn ssNumber = new TableColumn("SS NUmber");   //table colunms for displ
    Button load = new Button("Load Info");  //button for executing the query qnd show the resultset
    load.setOnAction(e -> {
    try {
-   Statement statement = null;
+   Statement statement = null;   //establishing driver for mysql connection database
    Connection connection = DriverManager.getConnection(url, user, password);      
    System.out.println("Database connected");
    statement = connection.createStatement();
    ResultSet resultSet = statement.executeQuery("select * from boolauniversity.courseregistration3, studentsinfo ");
    while (resultSet.next()) {
    data.add(new StudentsSchedule(resultSet.getString("ssn"),
-                                resultSet.getString("firstname"), 
-                                resultSet.getString("middlename"),    
+                                resultSet.getString("firstname"),     //adding information to each of the column name in 
+                                resultSet.getString("middlename"),    // boolauniversily.courseregistration3 database table.
                                 resultSet.getString("lastname"),
                                 resultSet.getString("class"),
                                 resultSet.getString("yearmatriculated"),
