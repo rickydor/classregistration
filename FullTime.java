@@ -69,7 +69,7 @@ import static programmingassignmen1.Receivables.url;
    static String java = "Introduction to Computers";
    static String keyboarding = "Keyboarding 1";   
    static String english1 = "English 1";
-   static String webProgramming = "Web Programming";
+   static String webProgramming = "Web Programming";      //Name of each class title available
    static String cPlusPlusPro = "C++ Programming"; 
     
   public static void display() {  
@@ -171,7 +171,7 @@ import static programmingassignmen1.Receivables.url;
     
       String sql = "INSERT INTO boolauniversity.courseregistration3(id, ssn, firstname, middlename, lastname, coursenumbers, coursename, credits, price) "
               + "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
-      mystmt = connection.prepareStatement(sql); 
+      mystmt = connection.prepareStatement(sql);       //inserting data into database
       mystmt.setString(1, id.getText());
       mystmt.setString(2, ssn.getText());
       mystmt.setString(3, firstName.getText());
