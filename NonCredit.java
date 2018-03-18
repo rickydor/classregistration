@@ -37,8 +37,8 @@ import static programmingassignmen1.PartTime.url;
 
 public class NonCredit {
    static String url = "jdbc:mysql://localhost:3306/boolauniversity?useSSL=false";
-   static String user = "ricky";
-   static String password = "legendary,12";
+   static String user = "";
+   static String password = "";
    
    private static TextField id = new TextField();      //textfield for students names
    private static TextField ssn = new TextField();  
@@ -57,7 +57,7 @@ public static void display() {
     window.initModality(Modality.APPLICATION_MODAL);
     window.setTitle("Non-Credit");  
    
-  
+        //Inserting non credits courses in an observableArraylist
         data =
         FXCollections.observableArrayList(
             new CourseSelection("NC100", "Basic Cookie Baking", "NC", "$150"),
@@ -83,7 +83,7 @@ public static void display() {
         TableColumn credits = new TableColumn("Credits");
         credits.setMinWidth(100);
         credits.setCellValueFactory(
-                new PropertyValueFactory<CourseSelection, String>("credits"));
+                new PropertyValueFactory<CourseSelection, String>("credits"));   //Establishing column names in TableColumn
         
         TableColumn price = new TableColumn("Credits");
         price.setMinWidth(100);
@@ -155,7 +155,7 @@ public static void display() {
               + "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
       mystmt = connection.prepareStatement(sql); 
       mystmt.setString(1, id.getText());
-      mystmt.setString(2, ssn.getText());
+      mystmt.setString(2, ssn.getText());                  //inserting values into database
       mystmt.setString(3, firstName.getText());
       mystmt.setString(4, middleName.getText());
       mystmt.setString(5, lastName.getText());
